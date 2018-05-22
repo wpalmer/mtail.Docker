@@ -3,7 +3,7 @@ FROM alpine:latest
 RUN apk add --update go libc-dev curl git make bash
 ENV GOPATH /go
 ENV MTAIL_SRC /go/src/github.com/google/mtail
-ENV MTAIL_VERSION 9ae83e2c182433f9ece94857ded590cc5b2b0d50
+ENV MTAIL_VERSION v3.0.0-rc12
 
 RUN mkdir -p "${MTAIL_SRC%/mtail}" \
     && curl -L "https://github.com/google/mtail/archive/$MTAIL_VERSION.tar.gz" > /tmp/mtail.tar.gz \
