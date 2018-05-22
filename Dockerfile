@@ -8,7 +8,7 @@ ENV MTAIL_VERSION 9ae83e2c182433f9ece94857ded590cc5b2b0d50
 RUN mkdir -p "${MTAIL_SRC%/mtail}" \
     && curl -L "https://github.com/google/mtail/archive/$MTAIL_VERSION.tar.gz" > /tmp/mtail.tar.gz \
     && tar -C "${MTAIL_SRC%/mtail}" -zxf /tmp/mtail.tar.gz \
-    && mv "${MTAIL_SRC%/mtail}/mtail-$MTAIL_VERSION" "$MTAIL_SRC" \
+    && mv "${MTAIL_SRC%/mtail}/mtail-${MTAIL_VERSION#v}" "$MTAIL_SRC" \
     && rm -f /tmp/mtail.tar.gz
 
 RUN PATH="$PATH:$GOPATH/bin" make -C "$MTAIL_SRC" \
